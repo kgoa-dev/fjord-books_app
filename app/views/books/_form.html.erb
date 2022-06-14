@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label I18n.t 'books.title' %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
+    <%= form.label I18n.t 'books.memo' %>
     <%= form.text_area :memo %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
+    <%= form.label I18n.t 'books.author' %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
+    <%= form.label I18n.t 'books.picture' %>
     <%= form.file_field :picture %>
   </div>
 
