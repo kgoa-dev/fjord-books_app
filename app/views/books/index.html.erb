@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @books.each do |book| %>
+    <% @page.each do |book| %>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.memo %></td>
@@ -27,6 +27,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @page %>
 
 <br>
 
