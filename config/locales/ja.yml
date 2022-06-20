@@ -1,14 +1,12 @@
 ---
 ja:
-  headline:
-    books: "本一覧"
-    newbook: "本を新規登録"
-    edit: "本の情報を編集"
   books:
-    title: "タイトル"
-    memo: "メモ"
-    author: "著者"
-    picture: "画像"
+    index:
+      title: "本一覧"
+    new:
+      title: "本を新規登録"
+    edit:
+      title: "本の編集"
   control:
     show: "詳細"
     edit: "編集"
@@ -16,6 +14,15 @@ ja:
     newbook: "新規登録"
     back: "戻る"
   activerecord:
+    models:
+      book: "本"
+    attributes:
+      book:
+        id: 'ID'
+        title: 'タイトル'
+        memo: 'メモ'
+        author: '著者'
+        picture: '画像'
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
