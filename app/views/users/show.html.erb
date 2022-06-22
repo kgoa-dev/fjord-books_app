@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>e-mail:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>postal_code:</strong>
+  <%= @user.postal_code %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>self_introduction:</strong>
+  <%= @user.self_introduction %>
+</p>
+
+<%= link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link' %> |
+<%= link_to 'User List', users_path %>
