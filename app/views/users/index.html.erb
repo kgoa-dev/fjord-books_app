@@ -5,16 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>e-mail</th>
-      <th>postal_code</th>
-      <th>address</th>
-      <th>self_introduction</th>
-      <!--
-      <th><%= Book.human_attribute_name(:title) %></th>
-      <th><%= Book.human_attribute_name(:memo) %></th>
-      <th><%= Book.human_attribute_name(:author) %></th>
-      <th><%= Book.human_attribute_name(:picture) %></th>
-      -->
+      <td><%= User.human_attribute_name(:email) %></td>
+      <td><%= User.human_attribute_name(:postal_code) %></td>
+      <td><%= User.human_attribute_name(:address) %></td>
+      <td><%= User.human_attribute_name(:self_introduction) %></td>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -26,11 +20,11 @@
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= user.self_introduction %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to t('views.common.show'), user %></td>
         <% if current_user.id == user.id %>
-          <td><%= link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link' %></td>
+          <td><%= link_to t('views.common.edit'), edit_user_registration_path, class: 'navbar-link' %></td>
         <% else %>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to t('views.common.edit'), edit_user_path(user) %></td>
         <% end %>
       </tr>
     <% end %>

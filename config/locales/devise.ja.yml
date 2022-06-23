@@ -2,6 +2,21 @@
 
 ja:
   devise:
+    common:
+      login: ログイン
+      logout: ログアウト
+      singup: サインアップ
+      cancel: アカウント削除
+    title:
+      cancel_account: 'アカウントを削除しますか？'
+    notes:
+      logged_in_as: 'ログイン中…'
+      not_change_password: 'パスワードを変更しない場合は空白にしてください。'
+      characters_minimum: '文字以上で設定してください。'
+      need_current_password: '編集内容を更新する場合は現在のパスワードの入力が必要です。'
+      wating_confirmation: '現在、確認中です。'
+      unhappy: '気に入りませんか'
+      forgot_password: 'パスワードを忘れましたか？'
     confirmations:
       confirmed: 'アカウントを登録しました。'
       send_instructions: 'アカウントの有効化について数分以内にメールでご連絡します。'
