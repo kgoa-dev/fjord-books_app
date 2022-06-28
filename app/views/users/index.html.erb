@@ -23,8 +23,6 @@
         <td><%= link_to t('views.common.show'), user %></td>
         <% if current_user.id == user.id %>
           <td><%= link_to t('views.common.edit'), edit_user_registration_path, class: 'navbar-link' %></td>
-        <% else %>
-        <td><%= link_to t('views.common.edit'), edit_user_path(user) %></td>
         <% end %>
       </tr>
     <% end %>
