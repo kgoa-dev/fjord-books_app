@@ -1,4 +1,4 @@
-<h1>Editing Comment</h1>
+<h1><%= t('views.common.title_edit', name: Comment.model_name.human) %></h1>
 
 <%= form_with model: [@commentable, @comment] do |f| %>
   <%= f.text_area :content, required: true %>
@@ -7,5 +7,5 @@
   </div>
 <% end %>
 
-<%= link_to 'Show', @report %> |
-<%= link_to 'Back', reports_path %>
+<%= link_to t('views.common.show'), @commentable %> |
+<%= link_to t('devise.shared.links.back'), :back %>
