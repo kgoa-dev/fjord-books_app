@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :reports do
-    resources :comments, only: [:create], module: :reports
+    resources :comments, only: %i[create edit update destroy], module: :reports
   end
 
   resources :books
   resources :books do
-    resources :comments, only: [:create], module: :books
+    resources :comments, only: %i[create edit update destroy], module: :books
   end
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?

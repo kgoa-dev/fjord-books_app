@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: %i[edit destroy]
+
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user_id = current_user.id if current_user
@@ -10,9 +12,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human) }
+    end
+  end
+
   private
 
   def comment_params
     params.require(:comment).permit(:content, :user_id)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end
