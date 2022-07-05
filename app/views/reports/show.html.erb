@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= User.find(@report.user_id).name == "" ? User.find(@report.user_id).email : User.find(@report.user_id).name %></p>
+
+<p>
   <strong>Title:</strong>
   <%= @report.title %>
 </p>

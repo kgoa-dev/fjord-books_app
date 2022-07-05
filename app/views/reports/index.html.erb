@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Title</th>
       <th>Content</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
+        <td><%= User.find(report.user_id).name == "" ? User.find(report.user_id).email : User.find(report.user_id).name %></td>
         <td><%= report.title %></td>
         <td><%= report.content %></td>
         <td><%= link_to 'Show', report %></td>
