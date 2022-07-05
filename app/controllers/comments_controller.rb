@@ -1,5 +1,20 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[edit destroy]
+  before_action :set_comment, only: %i[edit destroy update]
+
+  # GET /reports/1/edit
+  def edit
+  end
+
+  # PATCH/PUT /reports/1 or /reports/1.json
+  def update
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to @commentable, notice: "Report was successfully updated." }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def create
     @comment = @commentable.comments.new(comment_params)
