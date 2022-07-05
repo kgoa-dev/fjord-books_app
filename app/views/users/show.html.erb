@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:postal_code) %>:</strong>
+  <%= @user.postal_code %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
+  <%= @user.self_introduction %>
+</p>
+
+<% if current_user.id == @user.id %>
+  <td><%= link_to t('views.common.edit'), edit_user_registration_path, class: 'navbar-link' %></td>
+<% end %>
+<%= link_to t('views.common.user_list'), users_path %>

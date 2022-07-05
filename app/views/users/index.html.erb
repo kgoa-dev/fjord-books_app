@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td><%= User.human_attribute_name(:email) %></td>
+      <td><%= User.human_attribute_name(:postal_code) %></td>
+      <td><%= User.human_attribute_name(:address) %></td>
+      <td><%= User.human_attribute_name(:self_introduction) %></td>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.postal_code %></td>
+        <td><%= user.address %></td>
+        <td><%= user.self_introduction %></td>
+        <td><%= link_to t('views.common.show'), user %></td>
+        <% if current_user.id == user.id %>
+          <td><%= link_to t('views.common.edit'), edit_user_registration_path, class: 'navbar-link' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
+
+<br>
+
+<%= link_to t('views.common.back'), books_path %>
