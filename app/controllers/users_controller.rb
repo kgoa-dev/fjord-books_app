@@ -10,9 +10,9 @@ class UsersController < ApplicationController
   end
 
   # フォロー一覧
-  def following
+  def followings
     user = User.find(params[:id])
-    @users = user.following
+    @users = user.followings
   end
 
   # フォロワー一覧
